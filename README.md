@@ -1,2 +1,2 @@
-# linux_media_keys
+# Linux Media Keys
 Media keys on Linux, without actual media keys.
