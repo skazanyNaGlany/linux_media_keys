@@ -39,9 +39,7 @@ func (mw *MainWindow) buildWindow() {
 	mw.window = tview.NewFlex()
 	mw.window.Box = tview.NewBox()
 	mw.window.SetBackgroundColor(tcell.ColorBlack)
-	mw.window.SetBorder(true)
 	mw.window.SetDirection(tview.FlexRow)
-	mw.window.SetTitle(fmt.Sprintf(TITLE, APP_VERSION))
 }
 
 func (mw *MainWindow) buildWindowPages() {
@@ -69,6 +67,7 @@ func (mw *MainWindow) buildWindowContents() {
 	mw.menu.AddItem(ABOUT_BUTTON, "", 'a', mw.aboutButtonCallback)
 	mw.menu.AddItem(EXIT_BUTTON, "", 'q', mw.exitButtonCallback)
 	mw.menu.SetBorder(true)
+	mw.menu.SetTitle(fmt.Sprintf(TITLE, APP_VERSION))
 
 	mw.runButtonIndex = 0
 	mw.killButtonIndex = 1
