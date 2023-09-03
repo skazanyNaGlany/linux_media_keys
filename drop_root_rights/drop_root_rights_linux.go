@@ -6,19 +6,19 @@ import (
 	"syscall"
 )
 
+const LINUX_ROOT_UID = 0
+
 type DropRootRights struct{}
 
 func (drr *DropRootRights) Drop() error {
-	euid := os.Geteuid()
-
-	if euid != 0 {
+	if !drr.IsEffectiveRoot() {
 		// not root
 		return nil
 	}
 
 	uid := os.Getuid()
 
-	if uid == 0 {
+	if uid == LINUX_ROOT_UID {
 		// root without suid bit, cannot drop privilege
 		return errors.New("program was run from root shell, not normal user (without SUID bit)")
 	}
@@ -27,5 +27,5 @@ func (drr *DropRootRights) Drop() error {
 }
 
 func (drr *DropRootRights) IsEffectiveRoot() bool {
-	return os.Geteuid() == 0
+	return os.Geteuid() == LINUX_ROOT_UID
 }
