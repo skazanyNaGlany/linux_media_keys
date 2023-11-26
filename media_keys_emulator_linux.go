@@ -111,7 +111,7 @@ func (mke *MediaKeysEmulator) executeKeyboardAction(pressed map[string]bool) {
 		exec.Command("reboot").Start()
 	} else if f8Pressed {
 		// shutdown
-		exec.Command("halt").Start()
+		exec.Command("shutdown", "-h", "now").Start()
 	} else if f11Pressed {
 		// mute/unmute
 		mke.kbEvent.SetKeys(keybd_event.VK_MUTE)
