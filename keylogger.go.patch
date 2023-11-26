@@ -1,0 +1,26 @@
+diff --git a/keylogger.go b/keylogger.go
+index 743a1ab..dbe1c35 100644
+--- a/keylogger.go
++++ b/keylogger.go
+@@ -3,7 +3,7 @@ package keylogger
+ import (
+ 	"bytes"
+ 	"encoding/binary"
+-	"errors"
++//	"errors"
+ 	"fmt"
+ 	"io/ioutil"
+ 	"os"
+@@ -35,9 +35,9 @@ var allowedDevices = devices{"keyboard", "logitech mx keys"}
+ // New creates a new keylogger for a device path
+ func New(devPath string) (*KeyLogger, error) {
+ 	k := &KeyLogger{}
+-	if !k.IsRoot() {
+-		return nil, errors.New("Must be run as root")
+-	}
++//	if !k.IsRoot() {
++//		return nil, errors.New("Must be run as root")
++//	}
+ 	fd, err := os.OpenFile(devPath, os.O_RDWR, os.ModeCharDevice)
+ 	k.fd = fd
+ 	return k, err
