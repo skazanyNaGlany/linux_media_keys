@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"os/exec"
+	"time"
 
 	"github.com/MarinX/keylogger"
 	"github.com/micmonay/keybd_event"
@@ -36,6 +37,9 @@ func NewMediaKeysEmulator() (*MediaKeysEmulator, error) {
 
 		return nil, err
 	}
+
+	// keybd_event - for linux, it is very important to wait 2 seconds
+	time.Sleep(2 * time.Second)
 
 	return &mke, nil
 }
