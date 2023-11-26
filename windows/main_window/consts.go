@@ -3,14 +3,14 @@ package main_window
 const TITLE = "Linux Media Keys v%v"
 const WINDOW_WIDTH = 800
 const WINDOW_HEIGHT = 600
-const TOGGLE_AUTOSTART_BUTTON_ENABLE = "Enable autostart                           "
-const TOGGLE_AUTOSTART_BUTTON_DISABLE = "Disable autostart                          "
-const KILL_BUTTON_ENABLE = "Kill running instance                      "
-const KILL_BUTTON_DISABLE = "Kill running instance        (not running) "
-const RUN_TEST_BUTTON_ENABLE = "Run (test)                                 "
-const RUN_TEST_BUTTON_DISABLE = "Run (test)                       (running) "
-const EXIT_BUTTON = "Exit                                       "
-const ABOUT_BUTTON = "About                                      "
+const TOGGLE_AUTOSTART_BUTTON_ENABLE = " Enable autostart                           "
+const TOGGLE_AUTOSTART_BUTTON_DISABLE = " Disable autostart                          "
+const KILL_BUTTON_ENABLE = " Kill running instance                      "
+const KILL_BUTTON_DISABLE = " Kill running instance        (not running) "
+const RUN_TEST_BUTTON_ENABLE = " Run (test)                                 "
+const RUN_TEST_BUTTON_DISABLE = " Run (test)                       (running) "
+const EXIT_BUTTON = " Exit                                       "
+const ABOUT_BUTTON = " About                                      "
 const ABOUT_TITLE = "Linux Media Keys"
 const ABOUT_MESSAGE = `Emulate Linux media keys
 

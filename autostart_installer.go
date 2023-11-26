@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"path/filepath"
 
 	"github.com/emersion/go-autostart"
 )
@@ -23,8 +24,10 @@ func (ai *AutostartInstaller) IsAutostartEnabled() bool {
 
 func (ai *AutostartInstaller) EnableAutostart(enable bool) error {
 	if enable {
+		exeAbsPath, _ := filepath.Abs(os.Args[0])
+
 		ai.autostartApp.Exec = []string{
-			os.Args[0],
+			exeAbsPath,
 			RUN_COMMAND}
 
 		return ai.autostartApp.Enable()

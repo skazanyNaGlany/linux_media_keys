@@ -38,8 +38,13 @@ func isRunCommand() bool {
 }
 
 func run() {
-	emulator := MediaKeysEmulator{}
-	emulator.Init()
+	emulator, err := NewMediaKeysEmulator()
+
+	if err != nil {
+		log.Panicln(err)
+	}
+
+	defer emulator.Close()
 
 	emulator.EmulateInLoop()
 }
